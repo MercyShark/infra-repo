@@ -15,16 +15,13 @@ spec:
       containers:
       - name: myapp
         image: rishabhdev04/fastapi-sample-image:20250119-ef6b5e85ad443ddbcb5a3e2efdde3a6e2b3061f1
-        volumeMounts:
-          - mountPath: "/usr/share/data"
-            name: static-volume
         env:
         - name: POD_NAME
           valueFrom:
             fieldRef:
               fieldPath: metadata.name
         ports: 
-          - containerPort: 4040
+          - containerPort: 8000
         resources:
           requests:
             memory: "128Mi"
@@ -32,7 +29,3 @@ spec:
           limits:
             memory: "256Mi"
             cpu: "500m"
-      volumes:
-        - name: static-volume
-          persistentVolumeClaim:
-            claimName: static-pvc
