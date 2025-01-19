@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: myapp
-        image: testing_image:0.0.1
+        image: rishabhdev04/fastapi-sample-image:20250119-ef6b5e85ad443ddbcb5a3e2efdde3a6e2b3061f1
         volumeMounts:
           - mountPath: "/usr/share/data"
             name: static-volume
